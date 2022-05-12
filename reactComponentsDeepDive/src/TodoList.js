@@ -1,4 +1,3 @@
-
 // import uniqid from 'uniqid';
 import { useEffect, useState } from "react";
 import TodoItem from "./TodoItem";
@@ -41,6 +40,16 @@ const onTodoInputBlur = (e) =>{
         // и в него добавям новото todo, което е извлечено току що
         todo
     ])
+};
+//при click на delete на TodoItem възниква този handler
+//добра практика е името да подсказва събитието или какво прави тази функция
+const deleteTodoItemClickHandler = (id)=>{
+    //тук даваме само id, възможно най-точната информация за да може parent-a да се оправи
+    //children-a връща callback на parent, за дадено събитие 
+//console.log('delete, ', id)
+
+//filter връща нова референция към масива, в който са останали само тези стойности, които отговарят на условието
+setTodos(oldTodos=>oldTodos.filter(todo=>todo.id!==id))
 }
     return(
         <>  
@@ -51,7 +60,7 @@ const onTodoInputBlur = (e) =>{
              {/* {todos.map(todo=><li key={todo.id}>{todo.text}</li>)}  */}
              {/* //след импорта на TodoItem го използваме в <ul> елемента, като key e тук в TodoItem */}
              {/* , като е важно да се знае ,че пропъртито си го кръщаваме както искаме */} 
-             {todos.map(todo=><TodoItem key={todo.id} todo={todo}/>)}
+             {todos.map(todo=><TodoItem key={todo.id} todo={todo} onDelete={deleteTodoItemClickHandler}/>)}
         </ul>
         </>
        
@@ -60,4 +69,6 @@ const onTodoInputBlur = (e) =>{
 }
 
 export default TodoList;
+
+
 
