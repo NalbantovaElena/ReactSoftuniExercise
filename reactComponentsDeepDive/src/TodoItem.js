@@ -1,6 +1,8 @@
+//създаваме TodoItem и го импортваме в TodoList
+
 function TodoItem ({todo}){
     return(
-<ul>{todo.text}</ul>
+     <ul>{todo.text}</ul>
     )
 }
 
