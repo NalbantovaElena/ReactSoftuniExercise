@@ -1,4 +1,5 @@
 // import uniqid from 'uniqid';
+import TodoItem from "./TodoItem";
 
 function TodoList(){
 
@@ -11,6 +12,7 @@ function TodoList(){
     return(
         <ul>
             {/* {todos.map(todo=><li key={todo.id}>{todo.text}</li>)}  */}
+             //след импорта на TodoItem го използваме в <ul> елемента, като key e тук в TodoItem
              {todos.map(todo=><TodoItem key={todo.id} todo={todo}/>)}
         </ul>
       
