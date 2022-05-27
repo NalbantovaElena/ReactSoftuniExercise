@@ -44,7 +44,7 @@ function App() {
   let argument = pathNames[2];
 
   const routes = {
-    'home': <WelcomeWorld />,
+    'home': <WelcomeWorld navigationChangeHandler={navigationChangeHandler}/>,
     'games':<CatalogGame  navigationChangeHandler={navigationChangeHandler}/>, //подаваме navigationChangeHandler като  вграден props
     'create-game':<CreateGame />,
     'login':<Login />,
