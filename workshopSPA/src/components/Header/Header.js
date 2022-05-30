@@ -6,18 +6,18 @@ const Header = ()=>{
        
         <nav className="navbar">
             <section className="navbar-dashboard">
-                <Link href="/">Dashboard</Link>
+                <Link to="/">Dashboard</Link>
                 
                 <div id="guest">
-                    <Link className="button" href="/login">Login</Link>
-                    <Link className="button" href="/register">Register</Link>
+                    <Link className="button" to="/login">Login</Link>
+                    <Link className="button" to="/register">Register</Link>
                 </div>
                
                 <div id="user">
                     <span>Welcome, email</span>
-                    <Link className="button" href="/my-pets">My Pets</Link>
-                    <Link className="button" href="/create">Add Pet</Link>
-                    <Link className="button" href="#">Logout</Link>
+                    <Link className="button" to="/my-pets">My Pets</Link>
+                    <Link className="button" to="/create">Add Pet</Link>
+                    <Link className="button" to="#">Logout</Link>
                 </div>
             </section>
         </nav>
