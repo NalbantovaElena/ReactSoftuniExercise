@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Counter from './Counter';
 import './App.css';
 //Кога се пререндерира един компонент?
 //Initial Render
@@ -31,7 +32,8 @@ setInfo(oldState=>({
 }))
 
 },1500)
-  },[count])//при промяна на count пререндерира
+  },[])//при промяна на count пререндерира
+  //на мястото на count може да е функция, при която промяната се взима по референция
 //   //component didMount
 //   useEffect(()=>{ // с useEffect app-a се рендерира веднъж
 //       setTimeout(()=>{ //след това изпълнява ф-цията setTimeout с която се сменя state-a 
@@ -60,7 +62,11 @@ setInfo(oldState=>({
      {/* <h2>{info.age}</h2> */}
     
      <h2>{hobbi}</h2>
-     <h3>{count}</h3>
+     {count < 10
+     ? <Counter  value={count} /> //unmount
+     : null
+     }
+    
      <button onClick = {()=>setCount(x=>x+1)}>+</button>
     </div>
   );
