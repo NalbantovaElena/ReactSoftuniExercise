@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Counter from './Counter';
+import CharacterList from './CharacterList';
 import './App.css';
 //Кога се пререндерира един компонент?
 //Initial Render
@@ -68,6 +69,7 @@ setInfo(oldState=>({
      }
     
      <button onClick = {()=>setCount(x=>x+1)}>+</button>
+     <CharacterList />
     </div>
   );
 }
